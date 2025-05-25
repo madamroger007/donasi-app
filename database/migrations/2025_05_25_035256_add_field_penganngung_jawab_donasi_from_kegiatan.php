@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bentuk_donasi', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('slug');
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::table('kegiatan', function (Blueprint $table) {
+            $table->string('penanggung_jawab')->nullable();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bentuk_donasi');
+        Schema::table('kegiatan', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -17,10 +17,15 @@ return new class extends Migration
             $table->string('slug');
             $table->string('keterangan');
             $table->date('tanggal_kegiatan');
+            $table->string('nama_donatur')->nullable();
             $table->string('jenis_kegiatan');
             $table->string('sumber_donasi');
-            $table->string('penanggung_jawab');
-            $table->foreignId('bentuk_donasi_id')->constrained('bentuk_donasi')->cascadeOnDelete();
+            $table->string('bentuk_donasi');
+            $table->string('masuk_donasi')->nullable();
+            $table->string('keluar_donasi')->nullable();
+            $table->string('jumlah');
+            $table->string('penanggung_jawab')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

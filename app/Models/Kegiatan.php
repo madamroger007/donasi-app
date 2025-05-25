@@ -17,16 +17,16 @@ class Kegiatan extends Model
         'keterangan',
         'tanggal_kegiatan',
         'jenis_kegiatan',
+        'nama_donatur',
+        'bentuk_donasi',
         'sumber_donasi',
+        'masuk_donasi',
+        'keluar_donasi',
         'penanggung_jawab',
-        'bentuk_donasi_id',
         'jumlah'
     ];
 
-    public function bentukdonasi()
-    {
-        return $this->belongsTo(BentukDonasi::class, 'bentuk_donasi_id');
-    }
+
 
     public function setJudulAttribute($value)
     {

@@ -1,0 +1,24 @@
+pertama data donator:
+- status anggota: donator tetap dan spontan
+- bentuk donasi: beras/nasi, uang 
+- kode pos jangan wajib
+- hak akses sekertaris, bendahara
+- satuan buat ada RP, KG, Buah atau pcs, bungkus.
+- google forms: donatur supaya terhubung dengan database, formatnya disesuaikan dengan google form
+- ada nootifikasi untuk pemberitahuan menghubungi donatur lewat no hp atau email
+
+
+pilihan donatur:
+- bisa ikut beberapa program misalkan 1 donatur bisa ikut beberapa program
+- sumber donasi dari kagiatan apa
+- fitur jam dihapus aja
+- penjelasan program
+
+
+jumlah donasi:
+- ada nominal rp. missal = 1.000.000
+
+kegiatan:
+- dibuat perdivisi kategorinya adalah per program
+- laporan kegiatan tambahkan poto (card), harus banyak
+- kegiatan yang donasi masuk dan donasi keluar
