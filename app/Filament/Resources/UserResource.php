@@ -6,12 +6,15 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UserResource extends Resource
@@ -24,7 +27,28 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                    ->required()
+                    ->label('Name')
+                    ->maxLength(255),
+                TextInput::make('email')
+                    ->required()
+                    ->email()
+                    ->label('Email')
+                    ->maxLength(255),
+                TextInput::make('password')
+                    ->password()
+                    ->label('Password')
+                    ->minLength(8)
+                    ->maxLength(255)
+                    ->dehydrateStateUsing(fn($state) => bcrypt($state))
+                    ->required(fn(Forms\Get $get) => $get('id') === null), // Only required on create
+                Select::make('roles')
+                    ->relationship('roles', 'name')
+                    ->preload()
+                    ->label('Roles')
+                    ->required()
+                    ->searchable(),
             ]);
     }
 
